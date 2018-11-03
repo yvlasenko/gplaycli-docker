@@ -1,2 +1,2 @@
 # gplaycli-docker
-Docker image specs for gplaycli
+Run [gplaycli](https://github.com/matlink/gplaycli) on Docker
