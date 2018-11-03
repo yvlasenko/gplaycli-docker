@@ -1,0 +1,9 @@
+#!/bin/sh
+# CLI wrapper for gplaycli docker image
+
+docker run \
+    --rm \
+    -u=$(id -u):$(id -g) \
+    -v $(pwd):/mnt \
+    yvlasenko/gplaycli \
+    "$@"
