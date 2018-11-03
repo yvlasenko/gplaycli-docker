@@ -31,10 +31,10 @@ RUN set -x \
         /var/cache/apk/* \
     && find /usr/ -type d -name '__pycache__' | xargs rm -rf
 
-COPY gplaycli.conf /root/.config/gplaycli/gplaycli.conf
+COPY gplaycli.conf token-cache.json /
 
-COPY cache.json /tmp/gplaycli/token
+RUN chmod 666 /token-cache.json
 
 WORKDIR /mnt
 
-ENTRYPOINT ["/usr/bin/gplaycli"]
+ENTRYPOINT ["/usr/bin/gplaycli", "-c", "/gplaycli.conf"]
